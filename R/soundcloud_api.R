@@ -10,7 +10,7 @@
 #' path <- "http://api.soundcloud.com/users/3207?client_id=YOUR_CLIENT_ID"
 #'
 #' json_response <- soundcloud_api(path)
-#' path
+#' json_response
 #' }
 #'
 #' @return a Soundcloud API object
