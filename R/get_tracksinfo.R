@@ -18,7 +18,7 @@
 #' @return a data frame with all tracks of a user
 #' @export
 
-get_tracksinfo <- function(track_id, client_id=client_id) {
+get_tracksinfo <- function(track_id, client_id) {
 if (!is.numeric(track_id)) {
 stop("Please provide track id as numeric")
 }

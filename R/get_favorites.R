@@ -18,7 +18,7 @@
 #' @return a data frame with all tracks favorited by the user
 #' @export
 
-get_favorites <- function(user_id, client_id=client_id) {
+get_favorites <- function(user_id, client_id) {
 
    # Helper function: delete country codes
 
