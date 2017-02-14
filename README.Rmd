@@ -1,7 +1,7 @@
 
 ## Access the Soundcloud API
 
-soundR is a R-package which provides access to the Soundcloud API. The packages supports all API calls that are useful for data mining and analysis. soundR is a R-package which provides access to the Soundcloud API. The packages supports all API calls that are useful for data mining and analysis. Further API calls will be added in the future. For an overview of possible API calls see <https://developers.soundcloud.com/docs/api/reference>. All data from Soudncloud will be returned in user friendly data frames.
+soundR is a R-package which provides access to the Soundcloud API. The packages supports all API calls that are useful for data mining and analysis. Further API calls will be added in the future. For an overview of possible API calls see <https://developers.soundcloud.com/docs/api/reference>. All data from Soudncloud will be returned in user friendly data frames.
 
 ## How to install the package
 
