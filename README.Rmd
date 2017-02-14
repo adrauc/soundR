@@ -25,8 +25,8 @@ Usually you first need the user ID of a user. You can get the user ID of a user 
 client_id <- "Your_Client_ID"
 # first define the user name 
 # the user name is the last part of a user page URL
-# e.g. https://soundcloud.com/jonaskpunkt
-username <- "jonaskpunkt"
+# e.g. https://soundcloud.com/joshuakatharsis
+username <- "joshuakatharsis"
 # now search for this user
 user_df <- get_user(username, client_id)
 # now you have the user ID of this user in
