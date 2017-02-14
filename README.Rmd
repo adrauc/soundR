@@ -14,7 +14,7 @@ soundR is a R-package which provides access to the Soundcloud API. The packages 
   - `install_github("adrauc/soundR")`
 - Now you can load the library:
   - `library(soundR)`
-  - You can save your client ID in client_id. Then you don't need to proved the client_id for every API call:`client_id <- "MY_CLIENT_ID_AS_STRING"`
+  - You can save your client ID in client_id. Then you don't need to provide the client_id for every API call:`client_id <- "MY_CLIENT_ID_AS_STRING"`
 - That's it, you can now use the functions in the package.
 
 ## How to use the package
