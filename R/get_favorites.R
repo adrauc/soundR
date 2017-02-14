@@ -16,9 +16,6 @@
 #' }
 #'
 #' @return a data frame with all tracks favorited by the user
-#' @imports jsonlite
-#' @imports plyr
-#' @imports httr
 #' @export
 
 get_favorites <- function(user_id, client_id) {

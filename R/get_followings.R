@@ -16,9 +16,6 @@
 #' }
 #'
 #' @return a data frame with all followings of a user
-#' @imports jsonlite
-#' @imports plyr
-#' @imports httr
 #' @export
 
 get_followings <- function(user_id, client_id) {

@@ -22,7 +22,7 @@ Returns a data frame with user or users
 # lookup user
 username <- "joshuakatharsis"
 client_id <- "512fef5d8f512ff221f512ff"
-user_df <- get_user(username, client_id)
+user_df <- get_user(user_id, )
 user_df
 }
 

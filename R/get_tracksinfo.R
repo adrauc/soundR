@@ -16,9 +16,6 @@
 #' }
 #'
 #' @return a data frame with all tracks of a user
-#' @imports jsonlite
-#' @imports plyr
-#' @imports httr
 #' @export
 
 get_tracksinfo <- function(track_id, client_id) {

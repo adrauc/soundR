@@ -16,9 +16,6 @@
 #' }
 #'
 #' @return a data frame with all comments of a user
-#' @imports jsonlite
-#' @imports plyr
-#' @imports httr
 #' @export
 
 

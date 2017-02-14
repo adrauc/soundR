@@ -14,9 +14,6 @@
 #' }
 #'
 #' @return a Soundcloud API object
-#' @imports jsonlite
-#' @imports plyr
-#' @imports httr
 #' @export
 
 soundcloud_api <- function(path) {

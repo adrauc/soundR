@@ -16,9 +16,6 @@
 #' }
 #'
 #' @return a data frame with all requested users
-#' @imports jsonlite
-#' @imports plyr
-#' @imports httr
 #' @export
 
 get_user <- function(username, client_id) {
