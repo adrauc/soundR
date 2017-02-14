@@ -18,7 +18,7 @@
 #' @return a data frame with all followings of a user
 #' @export
 
-get_followings <- function(user_id, client_id) {
+get_followings <- function(user_id, client_id=client_id) {
   if (!is.numeric(user_id)) {
     stop("Please provide user id as numeric")
   }
