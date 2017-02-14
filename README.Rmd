@@ -1,0 +1,22 @@
+
+## Access the Soundcloud API
+
+soundR is a R-package which provides access to the Soundcloud API. The packages supports all API calls that are useful for data mining and analysis. soundR is a R-package which provides access to the Soundcloud API. The packages supports all API calls that are useful for data mining and analysis. Further API calls will be added in the future. For an overview of possible API calls see <https://developers.soundcloud.com/docs/api/reference>. All data from Soudncloud will be returned in user friendly data frames.
+
+## How to install the package
+
+- First you have to create a Soundcloud application at <https://developers.soundcloud.com/>. Click on "Register a new app".
+- If you have a registered app, please note down the "client ID" that can be found at <https://soundcloud.com/you/apps>.
+- To install the Github version of the package:
+  - Install devtools `if(!require("devtools")) install.packages("devtools")`
+  - Start a new session, load devtools, and install soundR from Github.
+  - `library(devtools)`
+  - `install_github("adrauc/soundR")`
+- Now you can load the library:
+  - `library(soundR)`
+  - You can save your client ID in client_id. Then you don't need to proved the client_id for every API call:`client_id <- MY_CLIENT_ID_AS_NUMERIC`
+- That's it, you can now use the functions in the package.
+
+## How to use the package
+
+I will add some examples in this section.

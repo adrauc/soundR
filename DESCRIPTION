@@ -1,0 +1,15 @@
+Package: soundR
+Type: Package
+Title: Access to the API of Soundcloud
+Version: 0.1.0
+Authors@R: person("Adrian", "Rauchfleisch", email = "adrian.rauchfleisch@gmail.com", role = c("aut","cre"))
+Maintainer: Adrian Rauchfleisch <adrian.rauchfleisch@gmail.com>
+Description: This package helps to access the API of the plattform Soundcloud.
+    The package includes functions to access users, tracks, and comments.
+License: GPL-2
+Encoding: UTF-8
+Imports:
+    httr (>= 1.2.1),
+    jsonlite (>= 1.2),
+    plyr (>= 1.8.4)
+RoxygenNote: 5.0.1
