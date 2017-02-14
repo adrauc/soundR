@@ -18,4 +18,22 @@ soundR is a R-package which provides access to the Soundcloud API. The packages 
 
 ## How to use the package
 
-I will add some examples in this section.
+To make API calls, you need to add your "client ID" to most functions.
+Usually you first need the user ID of a user. You can get the user ID of a user with the function `get_user()`. Then you can use other functions such as `get_tracks()`.
+```{r}
+# first add your client ID
+client_id <- "Your_Client_ID"
+# first define the user name 
+# the user name is the last part of a user page URL
+# e.g. https://soundcloud.com/jonaskpunkt
+username <- "jonaskpunkt"
+# now search for this user
+user_df <- get_user(username, client_id)
+# now you have the user ID of this user in
+user_df$id
+# now we can use other functions and get information about all tracks of this user
+user_id <- user_df$id
+tracks_id <- get_tracks(user_id, client_id)
+tracks_id
+```
+

@@ -33,7 +33,7 @@ get_favorites <- function(user_id, client_id) {
       } else {
         pos_results <- which(n_results)
         for (i in pos_results) {
-          result_list[[pos_results]]$available_country_codes <- NULL
+          result_list[[i]]$available_country_codes <- NULL
         }
         return(result_list)
       }
