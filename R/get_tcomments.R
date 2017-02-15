@@ -1,25 +1,26 @@
-#' get the followings of a user
+#' get the comments for a track
 #'
-#' @description Returns a data frame with all followings (followed users)
+#' @description Get all comments for a track
 #'
-#' @param user_id Numeric, has to be a valid user id of Soundcloud user
+#' @param track_id Numeric, has to be a valid track id
 #' @param client_id Has to be a valid client ID
 #'
 #' @seealso \url{https://developers.soundcloud.com/docs/api/reference#users}
 #' @examples
 #' \dontrun{
-#' # get all followings of a user
-#' user_id <- 20753162
+#' # get all comments for a track
+#' track_id <- 87895411
 #' client_id <- "512fef5d8f512ff221f512ff"
-#' followings_df <- get_followings(user_id, client_id)
-#' followings_df
+#' comments_df <- get_tcomments(track_id, client_id)
+#' comments_df
 #' }
 #'
-#' @return a data frame with all followings of a user
+#' @return a data frame with all comments of a user
 #' @export
 
-get_followings <- function(user_id, client_id=client_id) {
-  if (!is.numeric(user_id)) {
+
+get_tcomments <- function(user_id, client_id=client_id) {
+  if (!is.numeric(track_id)) {
     stop("Please provide user id as numeric")
   }
   if(!length(user_id)==1) {
@@ -27,13 +28,10 @@ get_followings <- function(user_id, client_id=client_id) {
   }
   user_list <- list()
 
-  path <- paste("http://api.soundcloud.com/users/", user_id,"/followings","?client_id=",client_id,
+  path <- paste("http://api.soundcloud.com/tracks/", track_id,"/comments","?client_id=",client_id,
                 "&page_size=200","&linked_partitioning=1", sep="")
   temp_user <- soundcloud_api(path)$content
-  if(length(temp_user[[1]]) == 0) {
-    stop("No followings could be found for this user")
-  }
-  if(is.null(temp_user$next_href)) {
+  if(is.null(temp_user$next_href)){
     temp_user <- temp_user$collection
     return(rbind.fill(lapply(temp_user, function(f) {
       as.data.frame(Filter(Negate(is.null), f), stringsAsFactors=F)

@@ -4,7 +4,7 @@
 \alias{get_tracksinfo}
 \title{get information about tracks}
 \usage{
-get_tracksinfo(track_id, client_id)
+get_tracksinfo(track_id, client_id = client_id)
 }
 \arguments{
 \item{track_id}{Numeric, has to be a valid track id}

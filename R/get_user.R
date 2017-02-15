@@ -18,7 +18,7 @@
 #' @return a data frame with all requested users
 #' @export
 
-get_user <- function(username, client_id) {
+get_user <- function(username, client_id=client_id) {
   if (!is.character(username)) {
     stop("Please provide usernames as string")
   }

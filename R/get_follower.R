@@ -18,7 +18,7 @@
 #' @return a data frame with all followers of a user
 #' @export
 
-get_follower <- function(user_id, client_id) {
+get_follower <- function(user_id, client_id=client_id) {
   if (!is.numeric(user_id)) {
     stop("Please provide user id as numeric")
   }

@@ -4,7 +4,7 @@
 \alias{get_favorites}
 \title{get tracks favorited by the user}
 \usage{
-get_favorites(user_id, client_id)
+get_favorites(user_id, client_id = client_id)
 }
 \arguments{
 \item{user_id}{Numeric, has to be a valid user id of Soundcloud user}

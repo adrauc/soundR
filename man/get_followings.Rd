@@ -4,7 +4,7 @@
 \alias{get_followings}
 \title{get the followings of a user}
 \usage{
-get_followings(user_id, client_id)
+get_followings(user_id, client_id = client_id)
 }
 \arguments{
 \item{user_id}{Numeric, has to be a valid user id of Soundcloud user}
