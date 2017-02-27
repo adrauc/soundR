@@ -26,7 +26,7 @@ get_follower <- function(user_id, client_id=client_id) {
     stop("Please only provide one user ID")
   }
   user_list <- list()
-
+  
   path <- paste("http://api.soundcloud.com/users/", user_id,"/followers","?client_id=",client_id,
                 "&page_size=200","&linked_partitioning=1", sep="")
   temp_user <- soundcloud_api(path)$content
@@ -40,6 +40,9 @@ get_follower <- function(user_id, client_id=client_id) {
     })))
   } else {
     i <- 1
+    total <- ceiling(get_user(as.character(user_id), client_id)$followers_count/200)
+    pb <- txtProgressBar(min = 0, max = total, style = 3)
+    
     user_list <- list()
     temp_df <- temp_user$collection
     user_list[[i]] <- rbind.fill(lapply(temp_df, function(f) {
@@ -53,8 +56,10 @@ get_follower <- function(user_id, client_id=client_id) {
       user_list[[i]] <- rbind.fill(lapply(temp_df, function(f) {
         as.data.frame(Filter(Negate(is.null), f), stringsAsFactors=F)
       }))
+      setTxtProgressBar(pb, i)
       href_check <- is.null(temp_user$next_href)
     }
+    close(pb)
     return(rbind.fill(user_list))
   }
 }
