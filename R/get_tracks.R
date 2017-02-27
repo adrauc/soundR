@@ -32,7 +32,15 @@ get_tracks <- function(user_id, client_id) {
   temp_user <- soundcloud_api(path)$content
   # give error back, that user has no tracks
   if(length(temp_user[[1]]) == 0) {
-    stop("No tracks could be found for this user")
+    # Soundcloud's API does not return "protected" songs.
+    # if a song is portected the whole list is empty.
+    # check, if user has songs.
+    check_user <- get_user(as.character(user_id), client_id)
+    if (check_user$track_count > 0) {
+      stop(paste0("User has ", check_user$track_count, " tracks, but API access is blocked."))
+      }else{
+        stop("No tracks could be found for this user")
+      }
   }
   if(is.null(temp_user$next_href)) {
     temp_user <- temp_user$collection
