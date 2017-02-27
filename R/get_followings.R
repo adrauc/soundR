@@ -40,6 +40,8 @@ get_followings <- function(user_id, client_id=client_id) {
     })))
   } else {
     i <- 1
+    total <- ceiling(get_user(as.character(user_id), client_id)$followings_count/200)
+    pb <- txtProgressBar(min = 0, max = total, style = 3)
     user_list <- list()
     temp_df <- temp_user$collection
     user_list[[i]] <- rbind.fill(lapply(temp_df, function(f) {
@@ -53,6 +55,7 @@ get_followings <- function(user_id, client_id=client_id) {
       user_list[[i]] <- rbind.fill(lapply(temp_df, function(f) {
         as.data.frame(Filter(Negate(is.null), f), stringsAsFactors=F)
       }))
+      setTxtProgressBar(pb, i)
       href_check <- is.null(temp_user$next_href)
     }
     return(rbind.fill(user_list))
